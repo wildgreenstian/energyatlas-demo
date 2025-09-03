@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e4a6d5a1848ed94178635a7ac4d4652a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed; 
+        bottom: 20px; left: 20px; z-index:9999;
+        background: white; padding: 8px 10px;
+        border:1px solid #ccc; border-radius:8px;
+        font-size:12px; line-height:1.4;">
+      <b>Availability</b><br>
+      <span style="color:green;">●</span> Available<br>
+      <span style="color:lightgray;">●</span> Sold out
+    </div>
+    
+    
+            <div class="folium-map" id="map_e4a6d5a1848ed94178635a7ac4d4652a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e4a6d5a1848ed94178635a7ac4d4652a = L.map(
+                "map_e4a6d5a1848ed94178635a7ac4d4652a",
+                {
+                    center: [52.3504100533006, 4.872310437637119],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_20187302f5ec290c52f2744a169515f2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_20187302f5ec290c52f2744a169515f2.addTo(map_e4a6d5a1848ed94178635a7ac4d4652a);
+        
+    
+            var feature_group_32e33b14083bf10a9788bda6d185638c = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_3fe9db53a6a42abefef3339d17123d1a = L.marker(
+                [52.2636694399456, 4.77417899378571],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_d0669d1cac863d57893bdca56d1999c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_340d1e20601564ae595c0153abfe3e5e = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_6b9cebf157d563849502fc3531b1d725 = $(`<div id="html_6b9cebf157d563849502fc3531b1d725" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Wilgenstroom Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 376.2 kWh · <b>Tomorrow:</b> 113.6 kWh<br/><b>Last 7 days:</b> 2048.5 kWh · <b>30 days:</b> 11093.8 kWh<br/><div><img src='../assets/charts/history/wilgenstroom-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wilgenstroom-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_340d1e20601564ae595c0153abfe3e5e.setContent(html_6b9cebf157d563849502fc3531b1d725);
+            
+        
+
+        marker_3fe9db53a6a42abefef3339d17123d1a.bindPopup(popup_340d1e20601564ae595c0153abfe3e5e)
+        ;
+
+        
+    
+    
+                marker_3fe9db53a6a42abefef3339d17123d1a.setIcon(icon_d0669d1cac863d57893bdca56d1999c0);
+            
+    
+            var marker_58711254e6965e4ceaa23500a7745234 = L.marker(
+                [52.3500686038709, 4.8409772948657],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_c14fa4416d2362a9664ef94d1c003d10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40ae9163f94245cd8e6250d115e98ac7 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_5c5d85f42ae5e9dc65a927f18d79138e = $(`<div id="html_5c5d85f42ae5e9dc65a927f18d79138e" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom VI</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 375.9 kWh · <b>Tomorrow:</b> 122.4 kWh<br/><b>Last 7 days:</b> 2011.4 kWh · <b>30 days:</b> 11084.5 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-vi_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-vi_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_40ae9163f94245cd8e6250d115e98ac7.setContent(html_5c5d85f42ae5e9dc65a927f18d79138e);
+            
+        
+
+        marker_58711254e6965e4ceaa23500a7745234.bindPopup(popup_40ae9163f94245cd8e6250d115e98ac7)
+        ;
+
+        
+    
+    
+                marker_58711254e6965e4ceaa23500a7745234.setIcon(icon_c14fa4416d2362a9664ef94d1c003d10);
+            
+    
+            var marker_6d3fe0d5a43462bb87b68d0ce84f2505 = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_ad34e0e1a65473f3b529d4be514d40b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_435a2a5c6328d9d6bedb5519921bbcda = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_e9193b4ace0b0014c89b05895b309ed4 = $(`<div id="html_e9193b4ace0b0014c89b05895b309ed4" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 375.2 kWh · <b>Tomorrow:</b> 122.1 kWh<br/><b>Last 7 days:</b> 2027.3 kWh · <b>30 days:</b> 11091.9 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_435a2a5c6328d9d6bedb5519921bbcda.setContent(html_e9193b4ace0b0014c89b05895b309ed4);
+            
+        
+
+        marker_6d3fe0d5a43462bb87b68d0ce84f2505.bindPopup(popup_435a2a5c6328d9d6bedb5519921bbcda)
+        ;
+
+        
+    
+    
+                marker_6d3fe0d5a43462bb87b68d0ce84f2505.setIcon(icon_ad34e0e1a65473f3b529d4be514d40b4);
+            
+    
+            var marker_b5aca017dd5fab4ca9be5ff0a3638164 = L.marker(
+                [52.3633356, 4.8389339],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_80fc1cb1c1765e3d740b5f0c7c2c7649 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5b32e3e599047312c07edbbbe162c0f = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_ed6b9bb1049be7d1c13013bceefc239d = $(`<div id="html_ed6b9bb1049be7d1c13013bceefc239d" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>August Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 375.7 kWh · <b>Tomorrow:</b> 128.2 kWh<br/><b>Last 7 days:</b> 2016.6 kWh · <b>30 days:</b> 11080.7 kWh<br/><div><img src='../assets/charts/history/august-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/august-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_d5b32e3e599047312c07edbbbe162c0f.setContent(html_ed6b9bb1049be7d1c13013bceefc239d);
+            
+        
+
+        marker_b5aca017dd5fab4ca9be5ff0a3638164.bindPopup(popup_d5b32e3e599047312c07edbbbe162c0f)
+        ;
+
+        
+    
+    
+                marker_b5aca017dd5fab4ca9be5ff0a3638164.setIcon(icon_80fc1cb1c1765e3d740b5f0c7c2c7649);
+            
+    
+            var marker_1791e15010fe0cbbc46ec5f1ba0bc529 = L.marker(
+                [52.343787425287, 4.95046083904236],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_4e34e1456d191fdef17e46e1b845a5e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b79374d23b83c61749c39c20abbdc731 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_4d9736614bd9a99baa8578932a37a7d6 = $(`<div id="html_4d9736614bd9a99baa8578932a37a7d6" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>De Meer Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 394.6 kWh · <b>Tomorrow:</b> 125.6 kWh<br/><b>Last 7 days:</b> 2061.0 kWh · <b>30 days:</b> 11202.6 kWh<br/><div><img src='../assets/charts/history/de-meer-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/de-meer-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_b79374d23b83c61749c39c20abbdc731.setContent(html_4d9736614bd9a99baa8578932a37a7d6);
+            
+        
+
+        marker_1791e15010fe0cbbc46ec5f1ba0bc529.bindPopup(popup_b79374d23b83c61749c39c20abbdc731)
+        ;
+
+        
+    
+    
+                marker_1791e15010fe0cbbc46ec5f1ba0bc529.setIcon(icon_4e34e1456d191fdef17e46e1b845a5e8);
+            
+    
+            var marker_03bdb2432c8f3ca9f1c6471ed9182791 = L.marker(
+                [52.3335863401682, 4.97135078321874],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_12e9fa76f76ce06cb06b7bc2fd0feae6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b85507bbdae52be322b61ac5824e9b8f = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_c0b8f397e5f0e7cccfd3319f4aa6506d = $(`<div id="html_c0b8f397e5f0e7cccfd3319f4aa6506d" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Diemen Ecostroom I + II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 394.7 kWh · <b>Tomorrow:</b> 131.2 kWh<br/><b>Last 7 days:</b> 2077.1 kWh · <b>30 days:</b> 11184.5 kWh<br/><div><img src='../assets/charts/history/diemen-ecostroom-i-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/diemen-ecostroom-i-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_b85507bbdae52be322b61ac5824e9b8f.setContent(html_c0b8f397e5f0e7cccfd3319f4aa6506d);
+            
+        
+
+        marker_03bdb2432c8f3ca9f1c6471ed9182791.bindPopup(popup_b85507bbdae52be322b61ac5824e9b8f)
+        ;
+
+        
+    
+    
+                marker_03bdb2432c8f3ca9f1c6471ed9182791.setIcon(icon_12e9fa76f76ce06cb06b7bc2fd0feae6);
+            
+    
+            var marker_ec68ad97b5d1a532ad541f945d71e4f6 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_698fa0cc1a79eda4991afd8f34d4ce91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_040bc65ef8592e7880d4ddd2b4fce1cc = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_c783ac0c2dbe3fa07bcac5de5369f3a1 = $(`<div id="html_c783ac0c2dbe3fa07bcac5de5369f3a1" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Huygens Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.9 kWh<br/><b>Last 7 days:</b> 1985.4 kWh · <b>30 days:</b> 11096.0 kWh<br/><div><img src='../assets/charts/history/huygens-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/huygens-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_040bc65ef8592e7880d4ddd2b4fce1cc.setContent(html_c783ac0c2dbe3fa07bcac5de5369f3a1);
+            
+        
+
+        marker_ec68ad97b5d1a532ad541f945d71e4f6.bindPopup(popup_040bc65ef8592e7880d4ddd2b4fce1cc)
+        ;
+
+        
+    
+    
+                marker_ec68ad97b5d1a532ad541f945d71e4f6.setIcon(icon_698fa0cc1a79eda4991afd8f34d4ce91);
+            
+    
+            var marker_5668761d3918d6424de0ddba4524358c = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_09a7f3d473634a9ac67e1705755c0f5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13b4061b77fa4348758acc7b148cbc23 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_aa750b0eef70d4b6758d00996d65abd0 = $(`<div id="html_aa750b0eef70d4b6758d00996d65abd0" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Jordaan Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.9 kWh<br/><b>Last 7 days:</b> 1985.4 kWh · <b>30 days:</b> 11096.0 kWh<br/><div><img src='../assets/charts/history/jordaan-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/jordaan-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_13b4061b77fa4348758acc7b148cbc23.setContent(html_aa750b0eef70d4b6758d00996d65abd0);
+            
+        
+
+        marker_5668761d3918d6424de0ddba4524358c.bindPopup(popup_13b4061b77fa4348758acc7b148cbc23)
+        ;
+
+        
+    
+    
+                marker_5668761d3918d6424de0ddba4524358c.setIcon(icon_09a7f3d473634a9ac67e1705755c0f5b);
+            
+    
+            var marker_1eb849ac7ef815fa5ba5195d8d61cc86 = L.marker(
+                [52.3922103, 4.9024439],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_a5c2aad1a64d48e5c55090beee9fea6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_920c7e8321030fc6149572a0720b5a21 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_7045b55a245ee82f285fca6d717a43e3 = $(`<div id="html_7045b55a245ee82f285fca6d717a43e3" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.8 kWh<br/><b>Last 7 days:</b> 1985.1 kWh · <b>30 days:</b> 11093.5 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_920c7e8321030fc6149572a0720b5a21.setContent(html_7045b55a245ee82f285fca6d717a43e3);
+            
+        
+
+        marker_1eb849ac7ef815fa5ba5195d8d61cc86.bindPopup(popup_920c7e8321030fc6149572a0720b5a21)
+        ;
+
+        
+    
+    
+                marker_1eb849ac7ef815fa5ba5195d8d61cc86.setIcon(icon_a5c2aad1a64d48e5c55090beee9fea6f);
+            
+    
+            var marker_848720f96dda8b2ee14f5ddd7407a325 = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_119fc0460bd128efedbb6e52d97c5072 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e1f9d0a64dd3670814de6eb35923af1 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_30b502fe593ae3900ea8f8f4d757ab39 = $(`<div id="html_30b502fe593ae3900ea8f8f4d757ab39" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 392.2 kWh · <b>Tomorrow:</b> 116.6 kWh<br/><b>Last 7 days:</b> 2026.3 kWh · <b>30 days:</b> 11223.6 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_6e1f9d0a64dd3670814de6eb35923af1.setContent(html_30b502fe593ae3900ea8f8f4d757ab39);
+            
+        
+
+        marker_848720f96dda8b2ee14f5ddd7407a325.bindPopup(popup_6e1f9d0a64dd3670814de6eb35923af1)
+        ;
+
+        
+    
+    
+                marker_848720f96dda8b2ee14f5ddd7407a325.setIcon(icon_119fc0460bd128efedbb6e52d97c5072);
+            
+    
+            var marker_6f882c0f7d756e9b182a9ee803febd96 = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_e42d98cd76e7141a1a923291f3f24bc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6d24a81c2eab6803e9b82f8fed097de = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_7dbfb6827e5ac4aaff1495df0d5bcab7 = $(`<div id="html_7dbfb6827e5ac4aaff1495df0d5bcab7" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom III</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 392.2 kWh · <b>Tomorrow:</b> 116.6 kWh<br/><b>Last 7 days:</b> 2026.3 kWh · <b>30 days:</b> 11223.6 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-iii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-iii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_e6d24a81c2eab6803e9b82f8fed097de.setContent(html_7dbfb6827e5ac4aaff1495df0d5bcab7);
+            
+        
+
+        marker_6f882c0f7d756e9b182a9ee803febd96.bindPopup(popup_e6d24a81c2eab6803e9b82f8fed097de)
+        ;
+
+        
+    
+    
+                marker_6f882c0f7d756e9b182a9ee803febd96.setIcon(icon_e42d98cd76e7141a1a923291f3f24bc2);
+            
+    
+            var marker_7095e9917b44b8fa262f5db373b7dbe2 = L.marker(
+                [52.3866324, 4.8709829],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_2e0e9aed87f6da04812f4d1633f2999c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_224850113b5a0260716631098aa23d51 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_13599a3d42cc69c57a982bb9ac2ef361 = $(`<div id="html_13599a3d42cc69c57a982bb9ac2ef361" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Westergasfabriek Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 377.8 kWh · <b>Tomorrow:</b> 130.8 kWh<br/><b>Last 7 days:</b> 2004.1 kWh · <b>30 days:</b> 11123.0 kWh<br/><div><img src='../assets/charts/history/westergasfabriek-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/westergasfabriek-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_224850113b5a0260716631098aa23d51.setContent(html_13599a3d42cc69c57a982bb9ac2ef361);
+            
+        
+
+        marker_7095e9917b44b8fa262f5db373b7dbe2.bindPopup(popup_224850113b5a0260716631098aa23d51)
+        ;
+
+        
+    
+    
+                marker_7095e9917b44b8fa262f5db373b7dbe2.setIcon(icon_2e0e9aed87f6da04812f4d1633f2999c);
+            
+    
+            var marker_8e848185a3adcee81303cb59daa43298 = L.marker(
+                [52.3822901572755, 4.84337912575275],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_20eb5e184b5d438359c49c2622315c48 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_350568649e6cb8db3b9aa898040739f0 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_6138c92f3b39642a031075dd781d3d30 = $(`<div id="html_6138c92f3b39642a031075dd781d3d30" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 376.6 kWh · <b>Tomorrow:</b> 132.2 kWh<br/><b>Last 7 days:</b> 2025.6 kWh · <b>30 days:</b> 11100.1 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_350568649e6cb8db3b9aa898040739f0.setContent(html_6138c92f3b39642a031075dd781d3d30);
+            
+        
+
+        marker_8e848185a3adcee81303cb59daa43298.bindPopup(popup_350568649e6cb8db3b9aa898040739f0)
+        ;
+
+        
+    
+    
+                marker_8e848185a3adcee81303cb59daa43298.setIcon(icon_20eb5e184b5d438359c49c2622315c48);
+            
+    
+            var marker_724c3d6df0871a9e5e9c99a1b884086b = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_300c01f60922c7dbe1a490eb1c8071fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89932490f6d0ea5bff8ed7514ea96b09 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_a5d239601dbf3df1cfb2c155e271d625 = $(`<div id="html_a5d239601dbf3df1cfb2c155e271d625" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.9 kWh<br/><b>Last 7 days:</b> 1985.4 kWh · <b>30 days:</b> 11096.0 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_89932490f6d0ea5bff8ed7514ea96b09.setContent(html_a5d239601dbf3df1cfb2c155e271d625);
+            
+        
+
+        marker_724c3d6df0871a9e5e9c99a1b884086b.bindPopup(popup_89932490f6d0ea5bff8ed7514ea96b09)
+        ;
+
+        
+    
+    
+                marker_724c3d6df0871a9e5e9c99a1b884086b.setIcon(icon_300c01f60922c7dbe1a490eb1c8071fc);
+            
+    
+            var marker_aca59c8d375c3f7a44a07d4865ef1f27 = L.marker(
+                [52.3828016310243, 4.84275201773639],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_02b54b0067f3113cb026ed8d6184b63d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5e94fe72884ce452eb4e2f956a1bab6d = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_92cefdd6c2726fe1298e0897c3739bcf = $(`<div id="html_92cefdd6c2726fe1298e0897c3739bcf" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom III</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 376.6 kWh · <b>Tomorrow:</b> 132.2 kWh<br/><b>Last 7 days:</b> 2025.6 kWh · <b>30 days:</b> 11100.1 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-iii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-iii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_5e94fe72884ce452eb4e2f956a1bab6d.setContent(html_92cefdd6c2726fe1298e0897c3739bcf);
+            
+        
+
+        marker_aca59c8d375c3f7a44a07d4865ef1f27.bindPopup(popup_5e94fe72884ce452eb4e2f956a1bab6d)
+        ;
+
+        
+    
+    
+                marker_aca59c8d375c3f7a44a07d4865ef1f27.setIcon(icon_02b54b0067f3113cb026ed8d6184b63d);
+            
+    
+            var marker_e728f5e478df2d37618cf067712ddd0e = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_0d93fd9511557e1ef5b300014db272b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba419c92112fb4a3051d110d5dafbb9c = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_19bce75539519f013aaed656b6c7c2a6 = $(`<div id="html_19bce75539519f013aaed656b6c7c2a6" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom V</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.9 kWh<br/><b>Last 7 days:</b> 1985.4 kWh · <b>30 days:</b> 11096.0 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-v_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-v_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_ba419c92112fb4a3051d110d5dafbb9c.setContent(html_19bce75539519f013aaed656b6c7c2a6);
+            
+        
+
+        marker_e728f5e478df2d37618cf067712ddd0e.bindPopup(popup_ba419c92112fb4a3051d110d5dafbb9c)
+        ;
+
+        
+    
+    
+                marker_e728f5e478df2d37618cf067712ddd0e.setIcon(icon_0d93fd9511557e1ef5b300014db272b9);
+            
+    
+            var marker_2941688921f16898f268fec53094d69e = L.marker(
+                [52.3678923, 4.9252244],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_896d2afae188684868eb439ec396e124 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2792d53bc1768303bbe6fd153810687b = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_9dc6ff9a57c238e52839c8db54694e11 = $(`<div id="html_9dc6ff9a57c238e52839c8db54694e11" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Zeeburg Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 384.1 kWh · <b>Tomorrow:</b> 118.7 kWh<br/><b>Last 7 days:</b> 2033.6 kWh · <b>30 days:</b> 11159.6 kWh<br/><div><img src='../assets/charts/history/zeeburg-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/zeeburg-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_2792d53bc1768303bbe6fd153810687b.setContent(html_9dc6ff9a57c238e52839c8db54694e11);
+            
+        
+
+        marker_2941688921f16898f268fec53094d69e.bindPopup(popup_2792d53bc1768303bbe6fd153810687b)
+        ;
+
+        
+    
+    
+                marker_2941688921f16898f268fec53094d69e.setIcon(icon_896d2afae188684868eb439ec396e124);
+            
+    
+            var marker_34cb92acf4fd52f09e3e90693e73a06a = L.marker(
+                [52.3046749762106, 4.88002345273034],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_fd9682ae60a2f9332dcec2458edeea16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71bab29b254889d11e0e0522136a2b4f = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_ff26ae51373f9a5e41d5e90af51edc12 = $(`<div id="html_ff26ae51373f9a5e41d5e90af51edc12" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom II (Camera Obscuralaan)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 380.4 kWh · <b>Tomorrow:</b> 121.6 kWh<br/><b>Last 7 days:</b> 2037.5 kWh · <b>30 days:</b> 11088.8 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-ii-camera-obscuralaan_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-ii-camera-obscuralaan_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_71bab29b254889d11e0e0522136a2b4f.setContent(html_ff26ae51373f9a5e41d5e90af51edc12);
+            
+        
+
+        marker_34cb92acf4fd52f09e3e90693e73a06a.bindPopup(popup_71bab29b254889d11e0e0522136a2b4f)
+        ;
+
+        
+    
+    
+                marker_34cb92acf4fd52f09e3e90693e73a06a.setIcon(icon_fd9682ae60a2f9332dcec2458edeea16);
+            
+    
+            var marker_a8d9e9c56ab637daf6db24b61a4a3b02 = L.marker(
+                [52.3089981, 4.8800276],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_6023ac10adbc72a8f806584c79b80494 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51893b9717f9658a69257f856de3de3c = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_39b91d60a4fa49884d33be2eaa44c0f8 = $(`<div id="html_39b91d60a4fa49884d33be2eaa44c0f8" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom III (Oostelijk Halfrond)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 380.4 kWh · <b>Tomorrow:</b> 121.6 kWh<br/><b>Last 7 days:</b> 2037.5 kWh · <b>30 days:</b> 11088.8 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-iii-oostelijk-halfrond_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-iii-oostelijk-halfrond_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_51893b9717f9658a69257f856de3de3c.setContent(html_39b91d60a4fa49884d33be2eaa44c0f8);
+            
+        
+
+        marker_a8d9e9c56ab637daf6db24b61a4a3b02.bindPopup(popup_51893b9717f9658a69257f856de3de3c)
+        ;
+
+        
+    
+    
+                marker_a8d9e9c56ab637daf6db24b61a4a3b02.setIcon(icon_6023ac10adbc72a8f806584c79b80494);
+            
+    
+            var marker_56202cc9eb387ff1baa8a3e36b61d4ff = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_fd534a42efecf52b19717eceecaa0532 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3397b702b29854d46ef84e02bc82db6 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_ea484654406cbe53b7b267918bdf6bf0 = $(`<div id="html_ea484654406cbe53b7b267918bdf6bf0" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom IV (Drees Ecostroom)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 375.2 kWh · <b>Tomorrow:</b> 122.1 kWh<br/><b>Last 7 days:</b> 2027.3 kWh · <b>30 days:</b> 11091.9 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-iv-drees-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-iv-drees-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_f3397b702b29854d46ef84e02bc82db6.setContent(html_ea484654406cbe53b7b267918bdf6bf0);
+            
+        
+
+        marker_56202cc9eb387ff1baa8a3e36b61d4ff.bindPopup(popup_f3397b702b29854d46ef84e02bc82db6)
+        ;
+
+        
+    
+    
+                marker_56202cc9eb387ff1baa8a3e36b61d4ff.setIcon(icon_fd534a42efecf52b19717eceecaa0532);
+            
+    
+            var marker_563e1191d5d5600e3c58d004fe1f74c8 = L.marker(
+                [52.3541290174592, 4.61161139213519],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_7b9406e56508a6fb1e10faf6ede197bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_256e89edca9ed16ff74c74de69ef6a7f = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_f3d76093ae4add606283d65175913cc4 = $(`<div id="html_f3d76093ae4add606283d65175913cc4" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Berkenstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 325.7 kWh · <b>Tomorrow:</b> 118.1 kWh<br/><b>Last 7 days:</b> 2138.6 kWh · <b>30 days:</b> 11276.5 kWh<br/><div><img src='../assets/charts/history/berkenstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/berkenstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_256e89edca9ed16ff74c74de69ef6a7f.setContent(html_f3d76093ae4add606283d65175913cc4);
+            
+        
+
+        marker_563e1191d5d5600e3c58d004fe1f74c8.bindPopup(popup_256e89edca9ed16ff74c74de69ef6a7f)
+        ;
+
+        
+    
+    
+                marker_563e1191d5d5600e3c58d004fe1f74c8.setIcon(icon_7b9406e56508a6fb1e10faf6ede197bc);
+            
+    
+            var marker_fef85822b24272cc852a7caa77dc8702 = L.marker(
+                [52.3568992098534, 4.91867491719291],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_e0c7c728266bcc2ccc651d9624820f35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5a0de46af3982da9bcf9815acefba5c = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_66ed0b233c3d779024a3ca4c2da6174a = $(`<div id="html_66ed0b233c3d779024a3ca4c2da6174a" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Beukenstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 391.0 kWh · <b>Tomorrow:</b> 121.3 kWh<br/><b>Last 7 days:</b> 2050.5 kWh · <b>30 days:</b> 11186.5 kWh<br/><div><img src='../assets/charts/history/beukenstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/beukenstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_d5a0de46af3982da9bcf9815acefba5c.setContent(html_66ed0b233c3d779024a3ca4c2da6174a);
+            
+        
+
+        marker_fef85822b24272cc852a7caa77dc8702.bindPopup(popup_d5a0de46af3982da9bcf9815acefba5c)
+        ;
+
+        
+    
+    
+                marker_fef85822b24272cc852a7caa77dc8702.setIcon(icon_e0c7c728266bcc2ccc651d9624820f35);
+            
+    
+            var marker_d0f15a52bb70ae09ab747ac27aaf10eb = L.marker(
+                [52.3642598, 4.9521683],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_5ae4f938b3d84a7e29d1d0ef7671661e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af531f9950eb28283dc133b1980f5858 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_62663791407e948c51347c4a6fa79fd5 = $(`<div id="html_62663791407e948c51347c4a6fa79fd5" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Flevopark Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 389.3 kWh · <b>Tomorrow:</b> 117.8 kWh<br/><b>Last 7 days:</b> 2049.2 kWh · <b>30 days:</b> 11210.6 kWh<br/><div><img src='../assets/charts/history/flevopark-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/flevopark-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_af531f9950eb28283dc133b1980f5858.setContent(html_62663791407e948c51347c4a6fa79fd5);
+            
+        
+
+        marker_d0f15a52bb70ae09ab747ac27aaf10eb.bindPopup(popup_af531f9950eb28283dc133b1980f5858)
+        ;
+
+        
+    
+    
+                marker_d0f15a52bb70ae09ab747ac27aaf10eb.setIcon(icon_5ae4f938b3d84a7e29d1d0ef7671661e);
+            
+    
+            var marker_57b264513db65c595c6732736367b3b1 = L.marker(
+                [52.2628132881016, 4.76133206541425],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_9f954c09b6b6a4c3a8a9762ea17953a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da48a40b0c2ece4a9e61a02af6c68093 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_de600df19b888305bf9f794933002168 = $(`<div id="html_de600df19b888305bf9f794933002168" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Geraniumstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 372.9 kWh · <b>Tomorrow:</b> 106.1 kWh<br/><b>Last 7 days:</b> 2094.5 kWh · <b>30 days:</b> 11226.4 kWh<br/><div><img src='../assets/charts/history/geraniumstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/geraniumstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_da48a40b0c2ece4a9e61a02af6c68093.setContent(html_de600df19b888305bf9f794933002168);
+            
+        
+
+        marker_57b264513db65c595c6732736367b3b1.bindPopup(popup_da48a40b0c2ece4a9e61a02af6c68093)
+        ;
+
+        
+    
+    
+                marker_57b264513db65c595c6732736367b3b1.setIcon(icon_9f954c09b6b6a4c3a8a9762ea17953a1);
+            
+    
+            var marker_e58866361282ba8e017268d3e31a2a55 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_7994fbdbe6046bf9828340d057e0f776 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8320646b48fbb59c26a8bc0c99b7cbd7 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_51dd946f70f1263b13b58a0f096d7498 = $(`<div id="html_51dd946f70f1263b13b58a0f096d7498" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 121.9 kWh<br/><b>Last 7 days:</b> 1985.4 kWh · <b>30 days:</b> 11096.0 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_8320646b48fbb59c26a8bc0c99b7cbd7.setContent(html_51dd946f70f1263b13b58a0f096d7498);
+            
+        
+
+        marker_e58866361282ba8e017268d3e31a2a55.bindPopup(popup_8320646b48fbb59c26a8bc0c99b7cbd7)
+        ;
+
+        
+    
+    
+                marker_e58866361282ba8e017268d3e31a2a55.setIcon(icon_7994fbdbe6046bf9828340d057e0f776);
+            
+    
+            var marker_e9c03861ab3883afd6a1908a0fcdee7e = L.marker(
+                [52.3284415966193, 4.88162439669074],
+                {
+}
+            ).addTo(feature_group_32e33b14083bf10a9788bda6d185638c);
+        
+    
+            var icon_7711962665404a0b0e14d7f8531aa84a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_444ba66400b11a5ae4640ffe510b4357 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_924cee34d756286c823ec126396dd747 = $(`<div id="html_924cee34d756286c823ec126396dd747" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Zuid Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 0.0 kW <span style='opacity:.7'>(as of 2025-09-02T21:15)</span><br/><b>Today:</b> 379.1 kWh · <b>Tomorrow:</b> 122.5 kWh<br/><b>Last 7 days:</b> 2026.6 kWh · <b>30 days:</b> 11097.9 kWh<br/><div><img src='../assets/charts/history/zuid-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/zuid-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_444ba66400b11a5ae4640ffe510b4357.setContent(html_924cee34d756286c823ec126396dd747);
+            
+        
+
+        marker_e9c03861ab3883afd6a1908a0fcdee7e.bindPopup(popup_444ba66400b11a5ae4640ffe510b4357)
+        ;
+
+        
+    
+    
+                marker_e9c03861ab3883afd6a1908a0fcdee7e.setIcon(icon_7711962665404a0b0e14d7f8531aa84a);
+            
+    
+            feature_group_32e33b14083bf10a9788bda6d185638c.addTo(map_e4a6d5a1848ed94178635a7ac4d4652a);
+        
+    
+            var layer_control_37c2755ef8f36fd52a0193ecb4797de4_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_20187302f5ec290c52f2744a169515f2,
+                },
+                overlays :  {
+                    "Ecostroom (solar)" : feature_group_32e33b14083bf10a9788bda6d185638c,
+                },
+            };
+            let layer_control_37c2755ef8f36fd52a0193ecb4797de4 = L.control.layers(
+                layer_control_37c2755ef8f36fd52a0193ecb4797de4_layers.base_layers,
+                layer_control_37c2755ef8f36fd52a0193ecb4797de4_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_e4a6d5a1848ed94178635a7ac4d4652a);
+
+        
+</script>
+</html>
