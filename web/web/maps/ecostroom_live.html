@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_01625c1eca44c009efc587522d3be2d8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <script>
+      // Bind sidebar click for a Folium marker by its variable name.
+      // Looks up the marker safely via window['marker_xxx'] and retries until defined.
+      function EA_bindSidebar(markerVarName, html) {
+        function tryBind() {
+          var mk = window[markerVarName];   // undefined is OK (no ReferenceError)
+          if (!mk || !mk.on) return setTimeout(tryBind, 30);
+          mk.on('click', function () {
+            const panel = document.getElementById('ea-panel');
+            if (panel) panel.innerHTML = html;
+            if (window.__ea_sidebar && window.__ea_sidebar.open) {
+              window.__ea_sidebar.open('proj');
+            } else {
+              console.warn('[EA] Sidebar control not ready');
+            }
+          });
+        }
+        tryBind();
+      }
+    </script>
+    
+    
+    <div style="
+        position: fixed; 
+        bottom: 20px; left: 20px; z-index:9999;
+        background: white; padding: 8px 10px;
+        border:1px solid #ccc; border-radius:8px;
+        font-size:12px; line-height:1.4;">
+      <b>Availability</b><br>
+      <span style="color:green;">●</span> Available<br>
+      <span style="color:lightgray;">●</span> Sold out
+    </div>
+    
+    
+            <div class="folium-map" id="map_01625c1eca44c009efc587522d3be2d8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_01625c1eca44c009efc587522d3be2d8 = L.map(
+                "map_01625c1eca44c009efc587522d3be2d8",
+                {
+                    center: [52.3504100533006, 4.872310437637119],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f903fce32863314c000778a74bd0736 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7f903fce32863314c000778a74bd0736.addTo(map_01625c1eca44c009efc587522d3be2d8);
+        
+    
+            var feature_group_48741b967846c7eaac5f1951d57fd2bd = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_9d1ef40d4bfd93813987a43205435834 = L.marker(
+                [52.2636694399456, 4.77417899378571],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_0db46c05edc65b15f7d1d33bee54b8da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deb73396f43347787ad3c75e4fe7e9f4 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_30230d9ff59d83fdb018e8e66726cb16 = $(`<div id="html_30230d9ff59d83fdb018e8e66726cb16" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Wilgenstroom Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 342.2 kWh · <b>Tomorrow:</b> 395.6 kWh<br/><b>Last 7 days:</b> 2080.6 kWh · <b>30 days:</b> 10696.4 kWh<br/><div><img src='../assets/charts/history/wilgenstroom-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wilgenstroom-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_deb73396f43347787ad3c75e4fe7e9f4.setContent(html_30230d9ff59d83fdb018e8e66726cb16);
+            
+        
+
+        marker_9d1ef40d4bfd93813987a43205435834.bindPopup(popup_deb73396f43347787ad3c75e4fe7e9f4)
+        ;
+
+        
+    
+    
+                marker_9d1ef40d4bfd93813987a43205435834.setIcon(icon_0db46c05edc65b15f7d1d33bee54b8da);
+            
+    
+            var marker_fbda3bd8928d598f1cec85e7b30269e9 = L.marker(
+                [52.3500686038709, 4.8409772948657],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_91c3d2046f95ed303b82aa59ad78e7a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a27cb237afce1ef570f80337bb96dbd = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_d4f3fe657430be29fd8103be8784847a = $(`<div id="html_d4f3fe657430be29fd8103be8784847a" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom VI</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.0 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 340.1 kWh · <b>Tomorrow:</b> 395.6 kWh<br/><b>Last 7 days:</b> 2026.2 kWh · <b>30 days:</b> 10627.9 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-vi_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-vi_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_0a27cb237afce1ef570f80337bb96dbd.setContent(html_d4f3fe657430be29fd8103be8784847a);
+            
+        
+
+        marker_fbda3bd8928d598f1cec85e7b30269e9.bindPopup(popup_0a27cb237afce1ef570f80337bb96dbd)
+        ;
+
+        
+    
+    
+                marker_fbda3bd8928d598f1cec85e7b30269e9.setIcon(icon_91c3d2046f95ed303b82aa59ad78e7a9);
+            
+    
+            var marker_3c8617d0bc5c4378fb68c317b0df99e2 = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_096c9a4b5999c47832b3c23a35b0d714 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25d092817463c77e296d9c108306e8c1 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_f05abb01ff016aaa26ec4d4372f8658a = $(`<div id="html_f05abb01ff016aaa26ec4d4372f8658a" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 341.8 kWh · <b>Tomorrow:</b> 396.0 kWh<br/><b>Last 7 days:</b> 2046.5 kWh · <b>30 days:</b> 10685.7 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_25d092817463c77e296d9c108306e8c1.setContent(html_f05abb01ff016aaa26ec4d4372f8658a);
+            
+        
+
+        marker_3c8617d0bc5c4378fb68c317b0df99e2.bindPopup(popup_25d092817463c77e296d9c108306e8c1)
+        ;
+
+        
+    
+    
+                marker_3c8617d0bc5c4378fb68c317b0df99e2.setIcon(icon_096c9a4b5999c47832b3c23a35b0d714);
+            
+    
+            var marker_37447bfc8739900f7220415c4790ca4a = L.marker(
+                [52.3633356, 4.8389339],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_53750ab31f240377a5eba79ec259bc1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e038e9db0235d753b6defe8dc2a9ea3 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_04aac4c9b2acfbf411153ec07f941664 = $(`<div id="html_04aac4c9b2acfbf411153ec07f941664" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>August Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 25.9 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 338.5 kWh · <b>Tomorrow:</b> 394.9 kWh<br/><b>Last 7 days:</b> 2047.9 kWh · <b>30 days:</b> 10633.9 kWh<br/><div><img src='../assets/charts/history/august-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/august-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_2e038e9db0235d753b6defe8dc2a9ea3.setContent(html_04aac4c9b2acfbf411153ec07f941664);
+            
+        
+
+        marker_37447bfc8739900f7220415c4790ca4a.bindPopup(popup_2e038e9db0235d753b6defe8dc2a9ea3)
+        ;
+
+        
+    
+    
+                marker_37447bfc8739900f7220415c4790ca4a.setIcon(icon_53750ab31f240377a5eba79ec259bc1d);
+            
+    
+            var marker_33a037b0892847c6f9692549c070a7ff = L.marker(
+                [52.343787425287, 4.95046083904236],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_58eb52850f6c55af1b921ad5912778a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_564b7f930074d362a0222ecb994cfb92 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_a4c364c1966fc13ca4bd73f8df34a506 = $(`<div id="html_a4c364c1966fc13ca4bd73f8df34a506" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>De Meer Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.3 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 343.2 kWh · <b>Tomorrow:</b> 395.0 kWh<br/><b>Last 7 days:</b> 2120.9 kWh · <b>30 days:</b> 10800.6 kWh<br/><div><img src='../assets/charts/history/de-meer-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/de-meer-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_564b7f930074d362a0222ecb994cfb92.setContent(html_a4c364c1966fc13ca4bd73f8df34a506);
+            
+        
+
+        marker_33a037b0892847c6f9692549c070a7ff.bindPopup(popup_564b7f930074d362a0222ecb994cfb92)
+        ;
+
+        
+    
+    
+                marker_33a037b0892847c6f9692549c070a7ff.setIcon(icon_58eb52850f6c55af1b921ad5912778a5);
+            
+    
+            var marker_378ef7721e71764a840477dfe730fb41 = L.marker(
+                [52.3335863401682, 4.97135078321874],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_9f030e4169097f611c5314503450fe62 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ff0add3aa0da4f97c728a2de311a3ca = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_f7eaea2df5b5cd4527fab965db8065b3 = $(`<div id="html_f7eaea2df5b5cd4527fab965db8065b3" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Diemen Ecostroom I + II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.3 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 343.6 kWh · <b>Tomorrow:</b> 395.2 kWh<br/><b>Last 7 days:</b> 2143.8 kWh · <b>30 days:</b> 10804.2 kWh<br/><div><img src='../assets/charts/history/diemen-ecostroom-i-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/diemen-ecostroom-i-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_1ff0add3aa0da4f97c728a2de311a3ca.setContent(html_f7eaea2df5b5cd4527fab965db8065b3);
+            
+        
+
+        marker_378ef7721e71764a840477dfe730fb41.bindPopup(popup_1ff0add3aa0da4f97c728a2de311a3ca)
+        ;
+
+        
+    
+    
+                marker_378ef7721e71764a840477dfe730fb41.setIcon(icon_9f030e4169097f611c5314503450fe62);
+            
+    
+            var marker_d836ead594eabf6b1d17bc0e456494ba = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_7472d9351a3339eb339dc694d391fb84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aafd9df2699f0e61c537a31e7150def1 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_822fce0848d5e89681d0e6a2689d0aaa = $(`<div id="html_822fce0848d5e89681d0e6a2689d0aaa" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Huygens Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2017.2 kWh · <b>30 days:</b> 10659.1 kWh<br/><div><img src='../assets/charts/history/huygens-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/huygens-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_aafd9df2699f0e61c537a31e7150def1.setContent(html_822fce0848d5e89681d0e6a2689d0aaa);
+            
+        
+
+        marker_d836ead594eabf6b1d17bc0e456494ba.bindPopup(popup_aafd9df2699f0e61c537a31e7150def1)
+        ;
+
+        
+    
+    
+                marker_d836ead594eabf6b1d17bc0e456494ba.setIcon(icon_7472d9351a3339eb339dc694d391fb84);
+            
+    
+            var marker_2ffad173f5c14829aa1615dce9fc8eb7 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_a0fea3bd97876f8afee160b1cbf71b92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c6bf53e45dfa6a4ae8fdc469b726284 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_fd13d9c094594761de5ecfaad09f6a48 = $(`<div id="html_fd13d9c094594761de5ecfaad09f6a48" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Jordaan Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2017.2 kWh · <b>30 days:</b> 10659.1 kWh<br/><div><img src='../assets/charts/history/jordaan-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/jordaan-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_1c6bf53e45dfa6a4ae8fdc469b726284.setContent(html_fd13d9c094594761de5ecfaad09f6a48);
+            
+        
+
+        marker_2ffad173f5c14829aa1615dce9fc8eb7.bindPopup(popup_1c6bf53e45dfa6a4ae8fdc469b726284)
+        ;
+
+        
+    
+    
+                marker_2ffad173f5c14829aa1615dce9fc8eb7.setIcon(icon_a0fea3bd97876f8afee160b1cbf71b92);
+            
+    
+            var marker_39030893e6e55fb31951eaacfe41df1d = L.marker(
+                [52.3922103, 4.9024439],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_7d952da2a869283f60f857ef1ad396cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab38aa7de9f36303429b493a8827ce6c = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_6215062c9011a625ef6c108fe8bb0a3e = $(`<div id="html_6215062c9011a625ef6c108fe8bb0a3e" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.0 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.2 kWh<br/><b>Last 7 days:</b> 2016.8 kWh · <b>30 days:</b> 10656.7 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_ab38aa7de9f36303429b493a8827ce6c.setContent(html_6215062c9011a625ef6c108fe8bb0a3e);
+            
+        
+
+        marker_39030893e6e55fb31951eaacfe41df1d.bindPopup(popup_ab38aa7de9f36303429b493a8827ce6c)
+        ;
+
+        
+    
+    
+                marker_39030893e6e55fb31951eaacfe41df1d.setIcon(icon_7d952da2a869283f60f857ef1ad396cb);
+            
+    
+            var marker_533bb4cb838a321ef0c7488f814b0d80 = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_719d89db92277f147ba709e752964f31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54103a6aa7a4677f535a330deec4feb7 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_a00ad23ff84cc46ce1fcec30ef9012e9 = $(`<div id="html_a00ad23ff84cc46ce1fcec30ef9012e9" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.3 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 344.0 kWh · <b>Tomorrow:</b> 396.5 kWh<br/><b>Last 7 days:</b> 2057.6 kWh · <b>30 days:</b> 10801.8 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_54103a6aa7a4677f535a330deec4feb7.setContent(html_a00ad23ff84cc46ce1fcec30ef9012e9);
+            
+        
+
+        marker_533bb4cb838a321ef0c7488f814b0d80.bindPopup(popup_54103a6aa7a4677f535a330deec4feb7)
+        ;
+
+        
+    
+    
+                marker_533bb4cb838a321ef0c7488f814b0d80.setIcon(icon_719d89db92277f147ba709e752964f31);
+            
+    
+            var marker_49bfbea91be00b3c7228a92973b3402e = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_e89392ff227339557cc5cd4df95c47d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_195380d28d06bba96a430c52e104f66e = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_f42f13aceaf6d02e8e7c84507a7fe6d4 = $(`<div id="html_f42f13aceaf6d02e8e7c84507a7fe6d4" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>PEK Ecostroom III</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.3 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 344.0 kWh · <b>Tomorrow:</b> 396.5 kWh<br/><b>Last 7 days:</b> 2057.6 kWh · <b>30 days:</b> 10801.8 kWh<br/><div><img src='../assets/charts/history/pek-ecostroom-iii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/pek-ecostroom-iii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_195380d28d06bba96a430c52e104f66e.setContent(html_f42f13aceaf6d02e8e7c84507a7fe6d4);
+            
+        
+
+        marker_49bfbea91be00b3c7228a92973b3402e.bindPopup(popup_195380d28d06bba96a430c52e104f66e)
+        ;
+
+        
+    
+    
+                marker_49bfbea91be00b3c7228a92973b3402e.setIcon(icon_e89392ff227339557cc5cd4df95c47d5);
+            
+    
+            var marker_b7e4ae1b99fd23cb9d2390149d364334 = L.marker(
+                [52.3866324, 4.8709829],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_9ee3960f7d43649f679e3a63fd992924 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0d1fcb646b1657bdfd77fb8d9c3d4ac = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_c7679d329d6d05073157aac5ec801513 = $(`<div id="html_c7679d329d6d05073157aac5ec801513" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Westergasfabriek Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.0 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.4 kWh · <b>Tomorrow:</b> 394.8 kWh<br/><b>Last 7 days:</b> 2022.4 kWh · <b>30 days:</b> 10667.1 kWh<br/><div><img src='../assets/charts/history/westergasfabriek-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/westergasfabriek-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_b0d1fcb646b1657bdfd77fb8d9c3d4ac.setContent(html_c7679d329d6d05073157aac5ec801513);
+            
+        
+
+        marker_b7e4ae1b99fd23cb9d2390149d364334.bindPopup(popup_b0d1fcb646b1657bdfd77fb8d9c3d4ac)
+        ;
+
+        
+    
+    
+                marker_b7e4ae1b99fd23cb9d2390149d364334.setIcon(icon_9ee3960f7d43649f679e3a63fd992924);
+            
+    
+            var marker_73345fe236276cb72f516d559ad1889a = L.marker(
+                [52.3822901572755, 4.84337912575275],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_73b5d33bb5735db521bd9ab40e1228d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b9a7e0f8f7a925649a18763037efdaa = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_f6efa6797c740628b98a7fda9d830cc2 = $(`<div id="html_f6efa6797c740628b98a7fda9d830cc2" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom I</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 25.9 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 337.8 kWh · <b>Tomorrow:</b> 394.2 kWh<br/><b>Last 7 days:</b> 2051.3 kWh · <b>30 days:</b> 10641.8 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-i_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-i_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_2b9a7e0f8f7a925649a18763037efdaa.setContent(html_f6efa6797c740628b98a7fda9d830cc2);
+            
+        
+
+        marker_73345fe236276cb72f516d559ad1889a.bindPopup(popup_2b9a7e0f8f7a925649a18763037efdaa)
+        ;
+
+        
+    
+    
+                marker_73345fe236276cb72f516d559ad1889a.setIcon(icon_73b5d33bb5735db521bd9ab40e1228d2);
+            
+    
+            var marker_70021c901ee26e0792e0a8e53e69dc3b = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_d80077fd18564747e9a5cc30f5e97c3f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_251a86a65229684dadb3b2743f304a08 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_8a212a49f3f13fd4ea80330c7e8ea28c = $(`<div id="html_8a212a49f3f13fd4ea80330c7e8ea28c" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2017.2 kWh · <b>30 days:</b> 10659.1 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_251a86a65229684dadb3b2743f304a08.setContent(html_8a212a49f3f13fd4ea80330c7e8ea28c);
+            
+        
+
+        marker_70021c901ee26e0792e0a8e53e69dc3b.bindPopup(popup_251a86a65229684dadb3b2743f304a08)
+        ;
+
+        
+    
+    
+                marker_70021c901ee26e0792e0a8e53e69dc3b.setIcon(icon_d80077fd18564747e9a5cc30f5e97c3f);
+            
+    
+            var marker_243ee49902744480e90373fcc2939864 = L.marker(
+                [52.3828016310243, 4.84275201773639],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_67ff393749801da7ce1925668ff7ccb7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_127752e27b145f51f8d975a1e4fdb9de = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_36adf4f3daa45dacc6d29d8ac19fc8b2 = $(`<div id="html_36adf4f3daa45dacc6d29d8ac19fc8b2" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom III</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 25.9 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 337.8 kWh · <b>Tomorrow:</b> 394.2 kWh<br/><b>Last 7 days:</b> 2051.3 kWh · <b>30 days:</b> 10641.8 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-iii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-iii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_127752e27b145f51f8d975a1e4fdb9de.setContent(html_36adf4f3daa45dacc6d29d8ac19fc8b2);
+            
+        
+
+        marker_243ee49902744480e90373fcc2939864.bindPopup(popup_127752e27b145f51f8d975a1e4fdb9de)
+        ;
+
+        
+    
+    
+                marker_243ee49902744480e90373fcc2939864.setIcon(icon_67ff393749801da7ce1925668ff7ccb7);
+            
+    
+            var marker_c40a150b32f337d76112969eb7ad1e00 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_46d1f52345c7083fb2b8084858b67a86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9fe0ecf7a03c8e6b069bec80f055b128 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_db1cab5ee9e21b97bc7ba774b7dee8ad = $(`<div id="html_db1cab5ee9e21b97bc7ba774b7dee8ad" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom V</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2017.2 kWh · <b>30 days:</b> 10659.1 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-v_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-v_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_9fe0ecf7a03c8e6b069bec80f055b128.setContent(html_db1cab5ee9e21b97bc7ba774b7dee8ad);
+            
+        
+
+        marker_c40a150b32f337d76112969eb7ad1e00.bindPopup(popup_9fe0ecf7a03c8e6b069bec80f055b128)
+        ;
+
+        
+    
+    
+                marker_c40a150b32f337d76112969eb7ad1e00.setIcon(icon_46d1f52345c7083fb2b8084858b67a86);
+            
+    
+            var marker_5530d8f9897159751d88ee5552a2b935 = L.marker(
+                [52.3678923, 4.9252244],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_65fde43d6a6da40549b9c15c92104c85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f3a6ca78847f037e6540e05fea27568 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_bb6392285a68efb23725f51485f7a58e = $(`<div id="html_bb6392285a68efb23725f51485f7a58e" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Zeeburg Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 341.6 kWh · <b>Tomorrow:</b> 395.2 kWh<br/><b>Last 7 days:</b> 2049.0 kWh · <b>30 days:</b> 10728.3 kWh<br/><div><img src='../assets/charts/history/zeeburg-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/zeeburg-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_9f3a6ca78847f037e6540e05fea27568.setContent(html_bb6392285a68efb23725f51485f7a58e);
+            
+        
+
+        marker_5530d8f9897159751d88ee5552a2b935.bindPopup(popup_9f3a6ca78847f037e6540e05fea27568)
+        ;
+
+        
+    
+    
+                marker_5530d8f9897159751d88ee5552a2b935.setIcon(icon_65fde43d6a6da40549b9c15c92104c85);
+            
+    
+            var marker_55edbf5080df8de983a4f9886306421f = L.marker(
+                [52.3046749762106, 4.88002345273034],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_9a77505274079ac2a782c317e27b79e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_187e75892e8d375ddd22a33ace404b1d = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_d8f65c016eaa5d6e2b1cd83ceb833050 = $(`<div id="html_d8f65c016eaa5d6e2b1cd83ceb833050" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom II (Camera Obscuralaan)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.2 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 342.4 kWh · <b>Tomorrow:</b> 396.1 kWh<br/><b>Last 7 days:</b> 2030.6 kWh · <b>30 days:</b> 10673.1 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-ii-camera-obscuralaan_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-ii-camera-obscuralaan_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_187e75892e8d375ddd22a33ace404b1d.setContent(html_d8f65c016eaa5d6e2b1cd83ceb833050);
+            
+        
+
+        marker_55edbf5080df8de983a4f9886306421f.bindPopup(popup_187e75892e8d375ddd22a33ace404b1d)
+        ;
+
+        
+    
+    
+                marker_55edbf5080df8de983a4f9886306421f.setIcon(icon_9a77505274079ac2a782c317e27b79e7);
+            
+    
+            var marker_762b6730451cffa7b3ce5f96e9151a5d = L.marker(
+                [52.3089981, 4.8800276],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_c21f778c8e4400acd092213ad15d26df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c78190b494030d4a787fa684440e0c5 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_7da0c60c0155339a66e375794d9381fa = $(`<div id="html_7da0c60c0155339a66e375794d9381fa" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom III (Oostelijk Halfrond)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.2 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 342.4 kWh · <b>Tomorrow:</b> 396.1 kWh<br/><b>Last 7 days:</b> 2030.6 kWh · <b>30 days:</b> 10673.1 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-iii-oostelijk-halfrond_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-iii-oostelijk-halfrond_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_1c78190b494030d4a787fa684440e0c5.setContent(html_7da0c60c0155339a66e375794d9381fa);
+            
+        
+
+        marker_762b6730451cffa7b3ce5f96e9151a5d.bindPopup(popup_1c78190b494030d4a787fa684440e0c5)
+        ;
+
+        
+    
+    
+                marker_762b6730451cffa7b3ce5f96e9151a5d.setIcon(icon_c21f778c8e4400acd092213ad15d26df);
+            
+    
+            var marker_95d62556a937a70fdcf79132b54d3ec1 = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_31f9eea5513cb140e8c8f01944ed9fee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f2557aef37bc56a32b6a4ba5517d274 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_5d8ce58b550893a59f9f5be4dd49cbc6 = $(`<div id="html_5d8ce58b550893a59f9f5be4dd49cbc6" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Amstelveen Ecostroom IV (Drees Ecostroom)</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 341.8 kWh · <b>Tomorrow:</b> 396.0 kWh<br/><b>Last 7 days:</b> 2046.5 kWh · <b>30 days:</b> 10685.7 kWh<br/><div><img src='../assets/charts/history/amstelveen-ecostroom-iv-drees-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/amstelveen-ecostroom-iv-drees-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_7f2557aef37bc56a32b6a4ba5517d274.setContent(html_5d8ce58b550893a59f9f5be4dd49cbc6);
+            
+        
+
+        marker_95d62556a937a70fdcf79132b54d3ec1.bindPopup(popup_7f2557aef37bc56a32b6a4ba5517d274)
+        ;
+
+        
+    
+    
+                marker_95d62556a937a70fdcf79132b54d3ec1.setIcon(icon_31f9eea5513cb140e8c8f01944ed9fee);
+            
+    
+            var marker_e1f1b7e2665607637266438b609a51ef = L.marker(
+                [52.3541290174592, 4.61161139213519],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_6799bbfab9014c9fe010b8d4325d0538 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ecbe14144cb5c67940836ee85697057 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_a96f701be5aab4846f00d16f456f7d4f = $(`<div id="html_a96f701be5aab4846f00d16f456f7d4f" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Berkenstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 25.6 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 334.8 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2056.4 kWh · <b>30 days:</b> 10826.9 kWh<br/><div><img src='../assets/charts/history/berkenstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/berkenstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_0ecbe14144cb5c67940836ee85697057.setContent(html_a96f701be5aab4846f00d16f456f7d4f);
+            
+        
+
+        marker_e1f1b7e2665607637266438b609a51ef.bindPopup(popup_0ecbe14144cb5c67940836ee85697057)
+        ;
+
+        
+    
+    
+                marker_e1f1b7e2665607637266438b609a51ef.setIcon(icon_6799bbfab9014c9fe010b8d4325d0538);
+            
+    
+            var marker_0908b04f557930ea70b497f9401d3cf6 = L.marker(
+                [52.3568992098534, 4.91867491719291],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_340b63ce2e3bcc0f3fbffe395a49bccf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ebe956d67686b098056e9a43aeb65a0c = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_36c98e7551ff32e7a474e23af121a351 = $(`<div id="html_36c98e7551ff32e7a474e23af121a351" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Beukenstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.2 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 342.6 kWh · <b>Tomorrow:</b> 395.0 kWh<br/><b>Last 7 days:</b> 2085.7 kWh · <b>30 days:</b> 10765.4 kWh<br/><div><img src='../assets/charts/history/beukenstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/beukenstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_ebe956d67686b098056e9a43aeb65a0c.setContent(html_36c98e7551ff32e7a474e23af121a351);
+            
+        
+
+        marker_0908b04f557930ea70b497f9401d3cf6.bindPopup(popup_ebe956d67686b098056e9a43aeb65a0c)
+        ;
+
+        
+    
+    
+                marker_0908b04f557930ea70b497f9401d3cf6.setIcon(icon_340b63ce2e3bcc0f3fbffe395a49bccf);
+            
+    
+            var marker_d38ff12cb923acc1048723bf8c56a06c = L.marker(
+                [52.3642598, 4.9521683],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_09239eb2829efb80db8c737500d9fea1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7bd167da9d59bb3b4597b04c2281f37f = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_d30d19ea6199224a27a67a194f1c8f92 = $(`<div id="html_d30d19ea6199224a27a67a194f1c8f92" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Flevopark Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.2 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 342.6 kWh · <b>Tomorrow:</b> 394.9 kWh<br/><b>Last 7 days:</b> 2075.1 kWh · <b>30 days:</b> 10778.2 kWh<br/><div><img src='../assets/charts/history/flevopark-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/flevopark-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_7bd167da9d59bb3b4597b04c2281f37f.setContent(html_d30d19ea6199224a27a67a194f1c8f92);
+            
+        
+
+        marker_d38ff12cb923acc1048723bf8c56a06c.bindPopup(popup_7bd167da9d59bb3b4597b04c2281f37f)
+        ;
+
+        
+    
+    
+                marker_d38ff12cb923acc1048723bf8c56a06c.setIcon(icon_09239eb2829efb80db8c737500d9fea1);
+            
+    
+            var marker_7fa2fe291a47d8521fa5a6052cdea82d = L.marker(
+                [52.2628132881016, 4.76133206541425],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_f70ab140e9111a1fec0e6793fd7a82be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c94dcaa03ed4cbd679f69f3854176f25 = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_cfa4eafdf58ba88f150e0eb0f56ad5e3 = $(`<div id="html_cfa4eafdf58ba88f150e0eb0f56ad5e3" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Geraniumstroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 25.9 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 341.0 kWh · <b>Tomorrow:</b> 395.3 kWh<br/><b>Last 7 days:</b> 2106.7 kWh · <b>30 days:</b> 10818.5 kWh<br/><div><img src='../assets/charts/history/geraniumstroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/geraniumstroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_c94dcaa03ed4cbd679f69f3854176f25.setContent(html_cfa4eafdf58ba88f150e0eb0f56ad5e3);
+            
+        
+
+        marker_7fa2fe291a47d8521fa5a6052cdea82d.bindPopup(popup_c94dcaa03ed4cbd679f69f3854176f25)
+        ;
+
+        
+    
+    
+                marker_7fa2fe291a47d8521fa5a6052cdea82d.setIcon(icon_f70ab140e9111a1fec0e6793fd7a82be);
+            
+    
+            var marker_66ff3ba4d0f63f6795e44004cd5eb8a0 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_40b054932fe736475a061e5d61dd858e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db1b6fa1ea119669ede1667ffeb486df = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_42d9dc7d6df3cad1132a0cfddbd21611 = $(`<div id="html_42d9dc7d6df3cad1132a0cfddbd21611" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>WOW Ecostroom II</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> available<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 339.6 kWh · <b>Tomorrow:</b> 394.3 kWh<br/><b>Last 7 days:</b> 2017.2 kWh · <b>30 days:</b> 10659.1 kWh<br/><div><img src='../assets/charts/history/wow-ecostroom-ii_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/wow-ecostroom-ii_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_db1b6fa1ea119669ede1667ffeb486df.setContent(html_42d9dc7d6df3cad1132a0cfddbd21611);
+            
+        
+
+        marker_66ff3ba4d0f63f6795e44004cd5eb8a0.bindPopup(popup_db1b6fa1ea119669ede1667ffeb486df)
+        ;
+
+        
+    
+    
+                marker_66ff3ba4d0f63f6795e44004cd5eb8a0.setIcon(icon_40b054932fe736475a061e5d61dd858e);
+            
+    
+            var marker_36ff63a42e5f9d2effc42faca8c153f6 = L.marker(
+                [52.3284415966193, 4.88162439669074],
+                {
+}
+            ).addTo(feature_group_48741b967846c7eaac5f1951d57fd2bd);
+        
+    
+            var icon_1831ea87cda5b6e968c3e342c8a85de5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5d6c907795ba2554ddc8ea0a0e1f292b = L.popup({
+  "maxWidth": 380,
+});
+
+        
+            
+                var html_958e472ca060eb41915eab8fecfec815 = $(`<div id="html_958e472ca060eb41915eab8fecfec815" style="width: 100.0%; height: 100.0%;"><div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'><div style='font-size:15px;font-weight:600'>Zuid Ecostroom</div><br/><b>Capacity:</b> 100 kW<br/><b>Availability:</b> Sold out<br/><b>Role:</b> Generation<br/><b>Developer:</b> Ecostroom.nu U.A.<br/><hr style='border:none;border-top:1px solid #ddd;margin:6px 0;'/><br/><span style='background:#fffa; border-radius:6px;'>LIVE</span> 26.1 kW <span style='opacity:.7'>(as of 2025-09-06T09:45)</span><br/><b>Today:</b> 341.9 kWh · <b>Tomorrow:</b> 395.9 kWh<br/><b>Last 7 days:</b> 2022.3 kWh · <b>30 days:</b> 10654.5 kWh<br/><div><img src='../assets/charts/history/zuid-ecostroom_hist30.png' style='width:320px; height:auto;'/></div><br/><div style='margin-top:4px'><img src='../assets/charts/forecast/zuid-ecostroom_fc7.png' style='width:320px; height:auto;'/></div></div></div>`)[0];
+                popup_5d6c907795ba2554ddc8ea0a0e1f292b.setContent(html_958e472ca060eb41915eab8fecfec815);
+            
+        
+
+        marker_36ff63a42e5f9d2effc42faca8c153f6.bindPopup(popup_5d6c907795ba2554ddc8ea0a0e1f292b)
+        ;
+
+        
+    
+    
+                marker_36ff63a42e5f9d2effc42faca8c153f6.setIcon(icon_1831ea87cda5b6e968c3e342c8a85de5);
+            
+    
+            feature_group_48741b967846c7eaac5f1951d57fd2bd.addTo(map_01625c1eca44c009efc587522d3be2d8);
+        
+    
+            var layer_control_ea33aad71cdd64ef26bc170cf963a5ae_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_7f903fce32863314c000778a74bd0736,
+                },
+                overlays :  {
+                    "Ecostroom (solar)" : feature_group_48741b967846c7eaac5f1951d57fd2bd,
+                },
+            };
+            let layer_control_ea33aad71cdd64ef26bc170cf963a5ae = L.control.layers(
+                layer_control_ea33aad71cdd64ef26bc170cf963a5ae_layers.base_layers,
+                layer_control_ea33aad71cdd64ef26bc170cf963a5ae_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_01625c1eca44c009efc587522d3be2d8);
+
+        
+</script>
+</html>

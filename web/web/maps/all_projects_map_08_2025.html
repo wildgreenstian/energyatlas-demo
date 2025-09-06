@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1fb667c423786e86575843e7cec1081c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1fb667c423786e86575843e7cec1081c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1fb667c423786e86575843e7cec1081c = L.map(
+                "map_1fb667c423786e86575843e7cec1081c",
+                {
+                    center: [52.34951727034798, 4.877059394812172],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ba22717774b4bac16f32b18e873bf3dd = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ba22717774b4bac16f32b18e873bf3dd.addTo(map_1fb667c423786e86575843e7cec1081c);
+        
+    
+            var feature_group_355e64d5ce6e418126218dbb404f6051 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_99f3cbf4919612454bfcedad5cc63e48 = L.marker(
+                [52.3546550614162, 4.9129585790983],
+                {
+}
+            ).addTo(feature_group_355e64d5ce6e418126218dbb404f6051);
+        
+    
+            var icon_f48efd8ac9a0ee80424441382029d936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6253dc2b528e6d0e0e33472ff89837f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4b5c17b3e99edd7fad0494e0d57e2411 = $(`<div id="html_4b5c17b3e99edd7fad0494e0d57e2411" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Student Hotel in Wibautstraat</strong><br/>           <b>Availability:</b> —<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Amsterdam Energie         </div>         </div>`)[0];
+                popup_c6253dc2b528e6d0e0e33472ff89837f.setContent(html_4b5c17b3e99edd7fad0494e0d57e2411);
+            
+        
+
+        marker_99f3cbf4919612454bfcedad5cc63e48.bindPopup(popup_c6253dc2b528e6d0e0e33472ff89837f)
+        ;
+
+        
+    
+    
+                marker_99f3cbf4919612454bfcedad5cc63e48.setIcon(icon_f48efd8ac9a0ee80424441382029d936);
+            
+    
+            var marker_caf3c40350a5c10709eedde0bbd4fd10 = L.marker(
+                [52.3747927568022, 4.86747157937969],
+                {
+}
+            ).addTo(feature_group_355e64d5ce6e418126218dbb404f6051);
+        
+    
+            var icon_b5b671fc0d914d19b072876f810b5748 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9acdacab4c364066ed23e4443e623275 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9aceb9ede0a2031f7350227669576e58 = $(`<div id="html_9aceb9ede0a2031f7350227669576e58" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Marcantilaan</strong><br/>           <b>Availability:</b> —<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Amsterdam Energie         </div>         </div>`)[0];
+                popup_9acdacab4c364066ed23e4443e623275.setContent(html_9aceb9ede0a2031f7350227669576e58);
+            
+        
+
+        marker_caf3c40350a5c10709eedde0bbd4fd10.bindPopup(popup_9acdacab4c364066ed23e4443e623275)
+        ;
+
+        
+    
+    
+                marker_caf3c40350a5c10709eedde0bbd4fd10.setIcon(icon_b5b671fc0d914d19b072876f810b5748);
+            
+    
+            var marker_388b989e52d72ee858ccacbe65a66208 = L.marker(
+                [52.2958916360573, 4.97422091250993],
+                {
+}
+            ).addTo(feature_group_355e64d5ce6e418126218dbb404f6051);
+        
+    
+            var icon_5bf781f434bdc9cd4e84846a98a1d799 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_195b74560671a6dda1eac3d0815fc2fd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c364b2ff1459208f64fdacb42055122d = $(`<div id="html_c364b2ff1459208f64fdacb42055122d" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Metrostation Reigersbos</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Amsterdam Energie         </div>         </div>`)[0];
+                popup_195b74560671a6dda1eac3d0815fc2fd.setContent(html_c364b2ff1459208f64fdacb42055122d);
+            
+        
+
+        marker_388b989e52d72ee858ccacbe65a66208.bindPopup(popup_195b74560671a6dda1eac3d0815fc2fd)
+        ;
+
+        
+    
+    
+                marker_388b989e52d72ee858ccacbe65a66208.setIcon(icon_5bf781f434bdc9cd4e84846a98a1d799);
+            
+    
+            feature_group_355e64d5ce6e418126218dbb404f6051.addTo(map_1fb667c423786e86575843e7cec1081c);
+        
+    
+            var feature_group_797a86d8fd926bbea29e6599ab49786e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_8d033ff399931c8c5dc0a585d235be4b = L.marker(
+                [52.2636694399456, 4.77417899378571],
+                {
+}
+            ).addTo(feature_group_797a86d8fd926bbea29e6599ab49786e);
+        
+    
+            var icon_63b363fcd828c267f7e335d78d552b8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89e6a405a61d0dbfb3b7a481543276b1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e232c4d20ad846384ec721acaebc3e8c = $(`<div id="html_e232c4d20ad846384ec721acaebc3e8c" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Wilgenstroom Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_89e6a405a61d0dbfb3b7a481543276b1.setContent(html_e232c4d20ad846384ec721acaebc3e8c);
+            
+        
+
+        marker_8d033ff399931c8c5dc0a585d235be4b.bindPopup(popup_89e6a405a61d0dbfb3b7a481543276b1)
+        ;
+
+        
+    
+    
+                marker_8d033ff399931c8c5dc0a585d235be4b.setIcon(icon_63b363fcd828c267f7e335d78d552b8f);
+            
+    
+            var marker_8c4c1c3db239e628c19891add4402668 = L.marker(
+                [52.3500686038709, 4.8409772948657],
+                {
+}
+            ).addTo(feature_group_797a86d8fd926bbea29e6599ab49786e);
+        
+    
+            var icon_c9a4621982268115b70ae8f24c49acce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6cb019f66bceca891647f1879eb07fa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dc2cd04270422dee0a523da5f7698157 = $(`<div id="html_dc2cd04270422dee0a523da5f7698157" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom VI</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_c6cb019f66bceca891647f1879eb07fa.setContent(html_dc2cd04270422dee0a523da5f7698157);
+            
+        
+
+        marker_8c4c1c3db239e628c19891add4402668.bindPopup(popup_c6cb019f66bceca891647f1879eb07fa)
+        ;
+
+        
+    
+    
+                marker_8c4c1c3db239e628c19891add4402668.setIcon(icon_c9a4621982268115b70ae8f24c49acce);
+            
+    
+            feature_group_797a86d8fd926bbea29e6599ab49786e.addTo(map_1fb667c423786e86575843e7cec1081c);
+        
+    
+            var feature_group_459d6c975313321d9fa8ff21566fc071 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_ca40de8203b9108ac55622e4b7f2f516 = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_4c9aa269fd1599801ca748b5ad87951f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_168a506d5284ebff240478b155217845 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b67f9d3aa4032e546458403349113f91 = $(`<div id="html_b67f9d3aa4032e546458403349113f91" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Amstelveen Ecostroom I</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_168a506d5284ebff240478b155217845.setContent(html_b67f9d3aa4032e546458403349113f91);
+            
+        
+
+        marker_ca40de8203b9108ac55622e4b7f2f516.bindPopup(popup_168a506d5284ebff240478b155217845)
+        ;
+
+        
+    
+    
+                marker_ca40de8203b9108ac55622e4b7f2f516.setIcon(icon_4c9aa269fd1599801ca748b5ad87951f);
+            
+    
+            var marker_b4f98ae54573341e994cfd5927dd33de = L.marker(
+                [52.3633356, 4.8389339],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_7e1534774508b4663dd83290b8a5c5ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c6693fb371a50f942e128157acd6972 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d9b929230a25c591df2e6697ab1ad190 = $(`<div id="html_d9b929230a25c591df2e6697ab1ad190" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>August Ecostroom</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_4c6693fb371a50f942e128157acd6972.setContent(html_d9b929230a25c591df2e6697ab1ad190);
+            
+        
+
+        marker_b4f98ae54573341e994cfd5927dd33de.bindPopup(popup_4c6693fb371a50f942e128157acd6972)
+        ;
+
+        
+    
+    
+                marker_b4f98ae54573341e994cfd5927dd33de.setIcon(icon_7e1534774508b4663dd83290b8a5c5ea);
+            
+    
+            var marker_11f57d9c4db216f670b463c03520ea64 = L.marker(
+                [52.343787425287, 4.95046083904236],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_42ba5265eb2a1e6a1c2ecea8ab8df2ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9c9eaf463ce5c6a970371e12a7b4334b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_752f69943e720495bd183229be622775 = $(`<div id="html_752f69943e720495bd183229be622775" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>De Meer Ecostroom</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_9c9eaf463ce5c6a970371e12a7b4334b.setContent(html_752f69943e720495bd183229be622775);
+            
+        
+
+        marker_11f57d9c4db216f670b463c03520ea64.bindPopup(popup_9c9eaf463ce5c6a970371e12a7b4334b)
+        ;
+
+        
+    
+    
+                marker_11f57d9c4db216f670b463c03520ea64.setIcon(icon_42ba5265eb2a1e6a1c2ecea8ab8df2ef);
+            
+    
+            var marker_f10b3f9ca104d62d54957ab73695f7f7 = L.marker(
+                [52.3335863401682, 4.97135078321874],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_5f4a961a36c0dc10c45e9ef0c751b4fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_041e7a7d048101d5195e8e55c2040560 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_30966e9afdf939e3597a8bb29f084cf0 = $(`<div id="html_30966e9afdf939e3597a8bb29f084cf0" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Diemen Ecostroom I + II</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_041e7a7d048101d5195e8e55c2040560.setContent(html_30966e9afdf939e3597a8bb29f084cf0);
+            
+        
+
+        marker_f10b3f9ca104d62d54957ab73695f7f7.bindPopup(popup_041e7a7d048101d5195e8e55c2040560)
+        ;
+
+        
+    
+    
+                marker_f10b3f9ca104d62d54957ab73695f7f7.setIcon(icon_5f4a961a36c0dc10c45e9ef0c751b4fb);
+            
+    
+            var marker_4158d10d87b8703ccfe5b2155d1e8ba9 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_a708ff246a2fc158b9b22b9816bf4752 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_291c6f8cc2dabbb2b810b9441020561e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_dabaca8820f3fddbfe0d17694984f5ac = $(`<div id="html_dabaca8820f3fddbfe0d17694984f5ac" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Huygens Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_291c6f8cc2dabbb2b810b9441020561e.setContent(html_dabaca8820f3fddbfe0d17694984f5ac);
+            
+        
+
+        marker_4158d10d87b8703ccfe5b2155d1e8ba9.bindPopup(popup_291c6f8cc2dabbb2b810b9441020561e)
+        ;
+
+        
+    
+    
+                marker_4158d10d87b8703ccfe5b2155d1e8ba9.setIcon(icon_a708ff246a2fc158b9b22b9816bf4752);
+            
+    
+            var marker_165308bb02860b45b13e11a2d8d9acfd = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_0d0ce2f50c409f9a43e37de890c98546 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1448a5581ca279964f62e51336c33677 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b955807c420cadd6c2aa09af0ee0a2f1 = $(`<div id="html_b955807c420cadd6c2aa09af0ee0a2f1" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Jordaan Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_1448a5581ca279964f62e51336c33677.setContent(html_b955807c420cadd6c2aa09af0ee0a2f1);
+            
+        
+
+        marker_165308bb02860b45b13e11a2d8d9acfd.bindPopup(popup_1448a5581ca279964f62e51336c33677)
+        ;
+
+        
+    
+    
+                marker_165308bb02860b45b13e11a2d8d9acfd.setIcon(icon_0d0ce2f50c409f9a43e37de890c98546);
+            
+    
+            var marker_d676f042c091ae6090e53331ce4ea8be = L.marker(
+                [52.3922103, 4.9024439],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_210af964ef2b962df9823b3d674d77d2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f556788cd66c586ae744a11e88cbf805 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_eb47d5e899f49e1efe7bed824ad044dd = $(`<div id="html_eb47d5e899f49e1efe7bed824ad044dd" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>PEK Ecostroom I</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_f556788cd66c586ae744a11e88cbf805.setContent(html_eb47d5e899f49e1efe7bed824ad044dd);
+            
+        
+
+        marker_d676f042c091ae6090e53331ce4ea8be.bindPopup(popup_f556788cd66c586ae744a11e88cbf805)
+        ;
+
+        
+    
+    
+                marker_d676f042c091ae6090e53331ce4ea8be.setIcon(icon_210af964ef2b962df9823b3d674d77d2);
+            
+    
+            var marker_3b426088c3b9e6f2ff50e31ab7df87b3 = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_164d944ac44ce9f0faca8f99c3222627 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1502d266f4a10900d9e1ec132cccfe5c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2a9e2e59c930f93832f153c3734d5915 = $(`<div id="html_2a9e2e59c930f93832f153c3734d5915" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>PEK Ecostroom II</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_1502d266f4a10900d9e1ec132cccfe5c.setContent(html_2a9e2e59c930f93832f153c3734d5915);
+            
+        
+
+        marker_3b426088c3b9e6f2ff50e31ab7df87b3.bindPopup(popup_1502d266f4a10900d9e1ec132cccfe5c)
+        ;
+
+        
+    
+    
+                marker_3b426088c3b9e6f2ff50e31ab7df87b3.setIcon(icon_164d944ac44ce9f0faca8f99c3222627);
+            
+    
+            var marker_79b4dae43d5ef57d754ce2215415973a = L.marker(
+                [52.4052674, 4.9462925],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_d8ac5e8e608c966f635b74a73543bd61 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b5800725a46da8c31a522cbec1eef338 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c70b41d3e08d658e2d14cdb1f383fc57 = $(`<div id="html_c70b41d3e08d658e2d14cdb1f383fc57" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>PEK Ecostroom III</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_b5800725a46da8c31a522cbec1eef338.setContent(html_c70b41d3e08d658e2d14cdb1f383fc57);
+            
+        
+
+        marker_79b4dae43d5ef57d754ce2215415973a.bindPopup(popup_b5800725a46da8c31a522cbec1eef338)
+        ;
+
+        
+    
+    
+                marker_79b4dae43d5ef57d754ce2215415973a.setIcon(icon_d8ac5e8e608c966f635b74a73543bd61);
+            
+    
+            var marker_4252c6fc561841e03b8ea69a4bcad3a9 = L.marker(
+                [52.3866324, 4.8709829],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_994cd6c3f8aabb72763a0161d24ece35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b07c9e85be3c9366f20c5beda5d4758 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f84c1941ec59dbe921f307f0a3b5e9ea = $(`<div id="html_f84c1941ec59dbe921f307f0a3b5e9ea" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Westergasfabriek Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_8b07c9e85be3c9366f20c5beda5d4758.setContent(html_f84c1941ec59dbe921f307f0a3b5e9ea);
+            
+        
+
+        marker_4252c6fc561841e03b8ea69a4bcad3a9.bindPopup(popup_8b07c9e85be3c9366f20c5beda5d4758)
+        ;
+
+        
+    
+    
+                marker_4252c6fc561841e03b8ea69a4bcad3a9.setIcon(icon_994cd6c3f8aabb72763a0161d24ece35);
+            
+    
+            var marker_ee3dd7a022b821047f8b835a68798010 = L.marker(
+                [52.3822901572755, 4.84337912575275],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_600e4eeaf7b9e55ca41f766bf8ddec8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53fd7b230c9003881af01435c99a3c4d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1db55aa28ff57a8d02613d56e674e102 = $(`<div id="html_1db55aa28ff57a8d02613d56e674e102" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom I</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_53fd7b230c9003881af01435c99a3c4d.setContent(html_1db55aa28ff57a8d02613d56e674e102);
+            
+        
+
+        marker_ee3dd7a022b821047f8b835a68798010.bindPopup(popup_53fd7b230c9003881af01435c99a3c4d)
+        ;
+
+        
+    
+    
+                marker_ee3dd7a022b821047f8b835a68798010.setIcon(icon_600e4eeaf7b9e55ca41f766bf8ddec8b);
+            
+    
+            var marker_b2223ffc15b49a0db6c6ac666b91710c = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_72fa7bfe1c943107ce42663923214b09 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42c032f927326cb4e11e148104a9da84 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_eea596d4bdca4ded23fadf215d5d9404 = $(`<div id="html_eea596d4bdca4ded23fadf215d5d9404" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom II</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_42c032f927326cb4e11e148104a9da84.setContent(html_eea596d4bdca4ded23fadf215d5d9404);
+            
+        
+
+        marker_b2223ffc15b49a0db6c6ac666b91710c.bindPopup(popup_42c032f927326cb4e11e148104a9da84)
+        ;
+
+        
+    
+    
+                marker_b2223ffc15b49a0db6c6ac666b91710c.setIcon(icon_72fa7bfe1c943107ce42663923214b09);
+            
+    
+            var marker_9dfd40c79eb33b32b68cc6bb6b7cccf8 = L.marker(
+                [52.3828016310243, 4.84275201773639],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_c34e4f77acd8da0b6982a56c8ed576f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3410a224dd196e9dab1db20e46442d6f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4bf03fae383212560e0273e86ff1775b = $(`<div id="html_4bf03fae383212560e0273e86ff1775b" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom III</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_3410a224dd196e9dab1db20e46442d6f.setContent(html_4bf03fae383212560e0273e86ff1775b);
+            
+        
+
+        marker_9dfd40c79eb33b32b68cc6bb6b7cccf8.bindPopup(popup_3410a224dd196e9dab1db20e46442d6f)
+        ;
+
+        
+    
+    
+                marker_9dfd40c79eb33b32b68cc6bb6b7cccf8.setIcon(icon_c34e4f77acd8da0b6982a56c8ed576f4);
+            
+    
+            var marker_6c0eaf22d7ff8787c59e0740429218e0 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_fe2d9adf7ced4e19baa9dedae86a7d24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cbbc7daf9d2578e0b72d5751eed4ac3c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_feb757d1b7347e15cedc394e1547fba1 = $(`<div id="html_feb757d1b7347e15cedc394e1547fba1" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom V</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_cbbc7daf9d2578e0b72d5751eed4ac3c.setContent(html_feb757d1b7347e15cedc394e1547fba1);
+            
+        
+
+        marker_6c0eaf22d7ff8787c59e0740429218e0.bindPopup(popup_cbbc7daf9d2578e0b72d5751eed4ac3c)
+        ;
+
+        
+    
+    
+                marker_6c0eaf22d7ff8787c59e0740429218e0.setIcon(icon_fe2d9adf7ced4e19baa9dedae86a7d24);
+            
+    
+            var marker_75b26195b35caef9b654fb21b7eda679 = L.marker(
+                [52.3678923, 4.9252244],
+                {
+}
+            ).addTo(feature_group_459d6c975313321d9fa8ff21566fc071);
+        
+    
+            var icon_31164433a7359aae4839daf2adca6c48 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad01b396ba8505c252cfa9cd2bec61d3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_83405231443ba424bf2c51097004c7f4 = $(`<div id="html_83405231443ba424bf2c51097004c7f4" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Zeeburg Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_ad01b396ba8505c252cfa9cd2bec61d3.setContent(html_83405231443ba424bf2c51097004c7f4);
+            
+        
+
+        marker_75b26195b35caef9b654fb21b7eda679.bindPopup(popup_ad01b396ba8505c252cfa9cd2bec61d3)
+        ;
+
+        
+    
+    
+                marker_75b26195b35caef9b654fb21b7eda679.setIcon(icon_31164433a7359aae4839daf2adca6c48);
+            
+    
+            feature_group_459d6c975313321d9fa8ff21566fc071.addTo(map_1fb667c423786e86575843e7cec1081c);
+        
+    
+            var feature_group_f90799bd2ed6e0f03e0d5bb91b40e499 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_15621e9812a6c0bccb54d3db1c2ca93c = L.marker(
+                [52.3046749762106, 4.88002345273034],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_80da37299c05a6cc7246cf0fc0cf6d67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_760ed23d5de5779a2ceee8acfbea2b06 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_624093593bafe064e633b77b8f9c4046 = $(`<div id="html_624093593bafe064e633b77b8f9c4046" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Amstelveen Ecostroom II (Camera Obscuralaan)</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_760ed23d5de5779a2ceee8acfbea2b06.setContent(html_624093593bafe064e633b77b8f9c4046);
+            
+        
+
+        marker_15621e9812a6c0bccb54d3db1c2ca93c.bindPopup(popup_760ed23d5de5779a2ceee8acfbea2b06)
+        ;
+
+        
+    
+    
+                marker_15621e9812a6c0bccb54d3db1c2ca93c.setIcon(icon_80da37299c05a6cc7246cf0fc0cf6d67);
+            
+    
+            var marker_f8ec59ef4360c8655385f9cc8b7c4280 = L.marker(
+                [52.3089981, 4.8800276],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_e98977205e7a7edd5c67a71958ef3cbb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f8547862feb17ddfee3754674c21465 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ab9f273be227658da56f5f32f90f27b7 = $(`<div id="html_ab9f273be227658da56f5f32f90f27b7" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Amstelveen Ecostroom III (Oostelijk Halfrond)</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_5f8547862feb17ddfee3754674c21465.setContent(html_ab9f273be227658da56f5f32f90f27b7);
+            
+        
+
+        marker_f8ec59ef4360c8655385f9cc8b7c4280.bindPopup(popup_5f8547862feb17ddfee3754674c21465)
+        ;
+
+        
+    
+    
+                marker_f8ec59ef4360c8655385f9cc8b7c4280.setIcon(icon_e98977205e7a7edd5c67a71958ef3cbb);
+            
+    
+            var marker_221d9bc03e51dc584467afdc5dbdf092 = L.marker(
+                [52.2862177, 4.8526493],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_33d8c51d4511c877b251f19fbd59c8ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61fa3e05edc040e24703d8d7218691e5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_33ec02c8efeddf2502579d18cdc2a9ea = $(`<div id="html_33ec02c8efeddf2502579d18cdc2a9ea" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Amstelveen Ecostroom IV (Drees Ecostroom)</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_61fa3e05edc040e24703d8d7218691e5.setContent(html_33ec02c8efeddf2502579d18cdc2a9ea);
+            
+        
+
+        marker_221d9bc03e51dc584467afdc5dbdf092.bindPopup(popup_61fa3e05edc040e24703d8d7218691e5)
+        ;
+
+        
+    
+    
+                marker_221d9bc03e51dc584467afdc5dbdf092.setIcon(icon_33d8c51d4511c877b251f19fbd59c8ec);
+            
+    
+            var marker_d3edf75e7384b382944a95882eb671d5 = L.marker(
+                [52.3541290174592, 4.61161139213519],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_32501b219842fa0ccaacc193c7b42246 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a7088395fb416f38d99f1303ddfbdb0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_417c73fb4b8c7a65a7afce0118178af6 = $(`<div id="html_417c73fb4b8c7a65a7afce0118178af6" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Berkenstroom</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_4a7088395fb416f38d99f1303ddfbdb0.setContent(html_417c73fb4b8c7a65a7afce0118178af6);
+            
+        
+
+        marker_d3edf75e7384b382944a95882eb671d5.bindPopup(popup_4a7088395fb416f38d99f1303ddfbdb0)
+        ;
+
+        
+    
+    
+                marker_d3edf75e7384b382944a95882eb671d5.setIcon(icon_32501b219842fa0ccaacc193c7b42246);
+            
+    
+            var marker_024c331fd25dc9f37716d5d149bf9510 = L.marker(
+                [52.3568992098534, 4.91867491719291],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_cbdefe3ae846f9ca25a056b0f83c6521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e65bc1755563d07f923532c9025ab57 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3141bc000cb23450536ad7dd34a99af6 = $(`<div id="html_3141bc000cb23450536ad7dd34a99af6" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Beukenstroom</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_7e65bc1755563d07f923532c9025ab57.setContent(html_3141bc000cb23450536ad7dd34a99af6);
+            
+        
+
+        marker_024c331fd25dc9f37716d5d149bf9510.bindPopup(popup_7e65bc1755563d07f923532c9025ab57)
+        ;
+
+        
+    
+    
+                marker_024c331fd25dc9f37716d5d149bf9510.setIcon(icon_cbdefe3ae846f9ca25a056b0f83c6521);
+            
+    
+            var marker_c50e89d3584150c6ad021c8fa20f345a = L.marker(
+                [52.3642598, 4.9521683],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_502eca7fff918b12ce4f4d6c18da2d9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98473261e277847778cb4fe43f871b85 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_37f27d144489f9bcb9d1d40f0aeab04d = $(`<div id="html_37f27d144489f9bcb9d1d40f0aeab04d" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Flevopark Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_98473261e277847778cb4fe43f871b85.setContent(html_37f27d144489f9bcb9d1d40f0aeab04d);
+            
+        
+
+        marker_c50e89d3584150c6ad021c8fa20f345a.bindPopup(popup_98473261e277847778cb4fe43f871b85)
+        ;
+
+        
+    
+    
+                marker_c50e89d3584150c6ad021c8fa20f345a.setIcon(icon_502eca7fff918b12ce4f4d6c18da2d9b);
+            
+    
+            var marker_43a730ccc3c45415ea9283c10a4a5bfd = L.marker(
+                [52.2628132881016, 4.76133206541425],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_0c827c6f3fbfbb96a4ab896388e20293 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d0b25becb22e0b8a37fc80a954c0084 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8569cbf977cd284d6791f7c6a1081902 = $(`<div id="html_8569cbf977cd284d6791f7c6a1081902" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Geraniumstroom</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_2d0b25becb22e0b8a37fc80a954c0084.setContent(html_8569cbf977cd284d6791f7c6a1081902);
+            
+        
+
+        marker_43a730ccc3c45415ea9283c10a4a5bfd.bindPopup(popup_2d0b25becb22e0b8a37fc80a954c0084)
+        ;
+
+        
+    
+    
+                marker_43a730ccc3c45415ea9283c10a4a5bfd.setIcon(icon_0c827c6f3fbfbb96a4ab896388e20293);
+            
+    
+            var marker_c025e7d7570572f96f5f2610b852d6e5 = L.marker(
+                [52.3762402, 4.8872083],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_64d2e9c6b16af2a3b567bc2cc15d06ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73f06b7cb60ad1fef3675fd3b3703b4c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_47f625486154ad4520493edc9dee0209 = $(`<div id="html_47f625486154ad4520493edc9dee0209" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>WOW Ecostroom II</strong><br/>           <b>Availability:</b> available<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_73f06b7cb60ad1fef3675fd3b3703b4c.setContent(html_47f625486154ad4520493edc9dee0209);
+            
+        
+
+        marker_c025e7d7570572f96f5f2610b852d6e5.bindPopup(popup_73f06b7cb60ad1fef3675fd3b3703b4c)
+        ;
+
+        
+    
+    
+                marker_c025e7d7570572f96f5f2610b852d6e5.setIcon(icon_64d2e9c6b16af2a3b567bc2cc15d06ce);
+            
+    
+            var marker_20c0015156084e69b3adb84c46fca43d = L.marker(
+                [52.3284415966193, 4.88162439669074],
+                {
+}
+            ).addTo(feature_group_f90799bd2ed6e0f03e0d5bb91b40e499);
+        
+    
+            var icon_e4d4d6b67e6f2b7842eb8f0621ea733b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd9caf6292edf3f4c2c1db483ef4a7c1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1d6ccec04c5daa5cf91b053040dc68ba = $(`<div id="html_1d6ccec04c5daa5cf91b053040dc68ba" style="width: 100.0%; height: 100.0%;">         <div style='font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;'>           <strong>Zuid Ecostroom</strong><br/>           <b>Availability:</b> Sold out<br/>           <b>Role:</b> Generation<br/>           <b>Developer:</b> Ecostroom.nu U.A.         </div>         </div>`)[0];
+                popup_fd9caf6292edf3f4c2c1db483ef4a7c1.setContent(html_1d6ccec04c5daa5cf91b053040dc68ba);
+            
+        
+
+        marker_20c0015156084e69b3adb84c46fca43d.bindPopup(popup_fd9caf6292edf3f4c2c1db483ef4a7c1)
+        ;
+
+        
+    
+    
+                marker_20c0015156084e69b3adb84c46fca43d.setIcon(icon_e4d4d6b67e6f2b7842eb8f0621ea733b);
+            
+    
+            feature_group_f90799bd2ed6e0f03e0d5bb91b40e499.addTo(map_1fb667c423786e86575843e7cec1081c);
+        
+    
+            var layer_control_8905f7e1c23d11f0e505104ca02e29b0_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_ba22717774b4bac16f32b18e873bf3dd,
+                },
+                overlays :  {
+                    "amsterdam_energie_projecten.csv" : feature_group_355e64d5ce6e418126218dbb404f6051,
+                    "ecostroom_projecten_csv/No PDFs-ecostroom_with_coords.csv" : feature_group_797a86d8fd926bbea29e6599ab49786e,
+                    "ecostroom_projecten_csv/Postcoderoosregeling-ecostroom_with_coords.csv" : feature_group_459d6c975313321d9fa8ff21566fc071,
+                    "ecostroom_projecten_csv/SCE-ecostroom_with_coords.csv" : feature_group_f90799bd2ed6e0f03e0d5bb91b40e499,
+                },
+            };
+            let layer_control_8905f7e1c23d11f0e505104ca02e29b0 = L.control.layers(
+                layer_control_8905f7e1c23d11f0e505104ca02e29b0_layers.base_layers,
+                layer_control_8905f7e1c23d11f0e505104ca02e29b0_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_1fb667c423786e86575843e7cec1081c);
+
+        
+</script>
+</html>
